@@ -1,13 +1,26 @@
 [project]
 name = "helmet-detection"
 version = "0.1.0"
-description = "Add your description here"
+description = "An AI model That detects if a motorbike rider is wearing a helmet."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "albumentations>=2.0.8",
     "opencv-python-headless>=4.10.0.84",
+    "pathlib>=1.0.1",
     "roboflow>=1.3.12",
     "torch>=2.12.1",
     "torchvision>=0.27.1",
+    "ultralytics>=8.4.90",
 ]
+
+# Update this at the bottom of pyproject.toml
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu126" }]
+torchvision = [{ index = "pytorch-cu126" }]
