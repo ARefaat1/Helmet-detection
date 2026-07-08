@@ -25,7 +25,7 @@ def test_model():
         source=str(source_images),
         conf=0.4,           # Lowered slightly to 40% to catch more helmets on your first test
         save=True,          # Saves the annotated image
-        project="detect/", # Saves cleanly inside your existing runs folder
+        project="runs/detect", # Saves cleanly inside your existing runs folder
         name="my_personal_tests" 
     )
     
