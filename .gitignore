@@ -7,8 +7,8 @@ wheels/
 *.egg-info
 
 data/
-runs/
-
+runs
+test_images
 # Virtual environments
 .venv
 .env
