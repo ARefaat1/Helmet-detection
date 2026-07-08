@@ -2,7 +2,8 @@
 from pathlib import Path
 from ultralytics import YOLO
 
-def evaluate_test_set():
+def evaluate_test_set() -> None:
+    """Evaluates the trained YOLO model on the test dataset split and generates visual predictions."""
     project_root = Path(__file__).resolve().parent
     
     # 1. Point to your finalized weights and your original data map

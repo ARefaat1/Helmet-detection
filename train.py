@@ -2,13 +2,19 @@
 import yaml
 from pathlib import Path
 from ultralytics import YOLO
+from typing import Dict, Any
 
-def load_config():
+def load_config() -> Dict[str, Any]:
+    """Loads the training configuration from YAML file."""
     config_path = Path(__file__).resolve().parent / "config" / "train_config.yaml"
+    if not config_path.exists():
+        raise FileNotFoundError(f"Configuration file not found at {config_path}")
+    
     with open(config_path, "r") as file:
         return yaml.safe_load(file)
 
-def train_detector():
+def train_detector() -> None:
+    """Initializes and trains the YOLO model using the loaded configuration."""
     # 1. Load your settings
     config = load_config()
     

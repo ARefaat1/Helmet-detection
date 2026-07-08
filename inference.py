@@ -2,7 +2,8 @@
 from pathlib import Path
 from ultralytics import YOLO
 
-def test_model():
+def test_model() -> None:
+    """Runs inference using the custom-trained YOLO model on a folder of personal test images."""
     # 1. Point to the EXACT nested path where YOLO saved your weights
     project_root = Path(__file__).resolve().parent
    
